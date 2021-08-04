@@ -20,15 +20,31 @@ module "vpc" {
   project_id   = "${var.project}"
   network_name = "${var.env}"
 
+  #network_name = "${var.env}"
+  network_name = "gke-spinnaker"
+
   subnets = [
     {
       subnet_name   = "${var.env}-subnet-01"
       subnet_ip     = "10.${var.env == "dev" ? 10 : 20}.10.0/24"
       subnet_region = "us-west1"
+      subnet_name   = "gke-spinnaker-sub"
+      subnet_ip     = "10.241.132.0/22"
+      subnet_region = "northamerica-northeast1"
     },
   ]
 
-  secondary_ranges = {
-    "${var.env}-subnet-01" = []
-  }
+
+ # subnets = [
+ #   {
+ #    subnet_name   = "${var.env}-subnet-01"
+ #    subnet_ip     = "10.${var.env == "dev" ? 10 : 20}.10.0/24"
+ #     subnet_region = "us-west1"
+ #   },
+ # ]
+
+
+  #secondary_ranges = {
+  #  "${var.env}-subnet-01" = []
+  #}
 }
