@@ -20,12 +20,12 @@ module "vpc" {
   project_id   = "${var.project}"
 
   #network_name = "${var.env}"
-  network_name = "gke-spinnaker"
+  network_name = "terraform"
 
   subnets = [
     {
-      subnet_name   = "gke-spinnaker-sub"
-      subnet_ip     = "10.241.132.0/22"
+      subnet_name   = "terraform-sub"
+      subnet_ip     = "10.241.132.1/22"
       subnet_region = "northamerica-northeast1"
     },
   ]
