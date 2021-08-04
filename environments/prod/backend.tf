@@ -15,7 +15,7 @@
 
 terraform {
   backend "gcs" {
-    bucket = "PROJECT_ID-tfstate"
+    bucket = "cio-wls-map-modern-lab-44d110-tfstate"
     prefix = "env/prod"
   }
 }
