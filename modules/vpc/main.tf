@@ -16,10 +16,8 @@
 module "vpc" {
   source  = "terraform-google-modules/network/google"
   version = "3.3.0"
-version = "3.3.0"
 
   project_id   = "${var.project}"
-  network_name = "${var.env}"
 
   #network_name = "${var.env}"
   network_name = "gke-spinnaker"
@@ -41,9 +39,9 @@ version = "3.3.0"
  #   },
  # ]
 
- secondary_ranges = {
-    "gke-spinnaker-tutorial-services-954319a1" = [10.241.144.0/20]
-  }
+# secondary_ranges = {
+#    "gke-spinnaker-tutorial-services-954319a1" = [10.241.144.0/20]
+#  }
 
   #secondary_ranges = {
   #  "${var.env}-subnet-01" = []
