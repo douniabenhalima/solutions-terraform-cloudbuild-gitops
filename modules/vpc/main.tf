@@ -16,7 +16,7 @@
 module "vpc" {
   source  = "terraform-google-modules/network/google"
   version = "3.3.0"
-version = "3.3.0"
+
 
   project_id   = "${var.project}"
   network_name = "${var.env}"
@@ -42,7 +42,8 @@ version = "3.3.0"
  # ]
 
  secondary_ranges = {
-    "gke-spinnaker-tutorial-services-954319a1" = [10.241.144.0/20]
+   range_name    = "gke-spinnaker-tutorial-services-954319a1"
+   ip_cidr_range = "10.241.144.0/20"
   }
 
   #secondary_ranges = {
