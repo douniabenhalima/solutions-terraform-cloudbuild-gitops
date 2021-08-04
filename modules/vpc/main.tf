@@ -26,7 +26,7 @@ module "vpc" {
     {
       subnet_name   = "terraform-sub"
       #subnet_ip     = "10.241.132.1/22"
-      subnet_ip     = "10.0.0.0/8"
+      subnet_ip     = "172.16.0.0/28"
       subnet_region = "northamerica-northeast1"
     },
   ]
